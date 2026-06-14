@@ -4,15 +4,16 @@ import styles from './page.module.css';
 
 const requestsData = {
   'london-family-office': {
-    flag: '🇬🇧',
+    countryCode: 'GB',
+    region: 'GB',
     type: 'Multi-Generational Family Office',
-    title: 'London Family Office (UK)',
+    title: 'Multigenerational Family Office (UK)',
     seeking: 'Prime Commercial Real Estate & Luxury Hospitality',
     capitalRange: '£80M – £220M',
     markets: 'UK, Germany, France',
     horizon: '3 – 7 Years',
     description:
-      'A multi-generational London family office with deep roots in European real estate and hospitality markets. This capital group seeks institutional-grade commercial buildings and branded hospitality assets across Western Europe, with a preference for established revenue profiles, strong tenant covenants and value-add repositioning potential. Specific investor identity is kept confidential in accordance with LEN privacy protocols.',
+      'A multigenerational family office with deep roots in European real estate and hospitality markets. This capital group seeks institutional-grade commercial buildings and branded hospitality assets across Western Europe, with a preference for established revenue profiles, strong tenant covenants and value-add repositioning potential. Specific investor identity is kept confidential in accordance with LEN privacy protocols.',
     requirements: [
       'Class-A commercial or luxury hospitality assets',
       'Minimum lot size £15M, maximum £100M',
@@ -22,15 +23,16 @@ const requestsData = {
     ],
   },
   'dubai-sovereign-allocator': {
-    flag: '🇦🇪',
+    countryCode: 'AE',
+    region: 'AE',
     type: 'Sovereign Capital Allocator',
-    title: 'Dubai Sovereign Wealth Allocator (UAE)',
+    title: 'Sovereign Capital Allocator (UAE)',
     seeking: 'Luxury Hotel Acquisitions & Mixed-Use Developments',
     capitalRange: '$150M – $500M',
     markets: 'GCC, Europe, Asia-Pacific',
     horizon: '10 – 20 Years',
     description:
-      'A sovereign-backed capital allocator based in Dubai, deploying long-duration capital into luxury hotel acquisitions and large-scale mixed-use developments across the GCC, European gateway cities and Asia-Pacific. This entity prioritises trophy assets with global brand affiliations, strong international demand fundamentals and long-term capital appreciation. Investor identity maintained under strict confidentiality per LEN protocols.',
+      'A sovereign-backed capital allocator deploying long-duration capital into luxury hotel acquisitions and large-scale mixed-use developments across the GCC, European gateway cities and Asia-Pacific. This entity prioritises trophy assets with global brand affiliations, strong international demand fundamentals and long-term capital appreciation. Investor identity maintained under strict confidentiality per LEN protocols.',
     requirements: [
       'Trophy-grade 5-star or ultra-luxury hotel assets',
       'Minimum 150 keys; large mixed-use GDV $200M+',
@@ -40,15 +42,16 @@ const requestsData = {
     ],
   },
   'singapore-venture-capital': {
-    flag: '🇸🇬',
+    countryCode: 'SG',
+    region: 'SG',
     type: 'Venture & Growth Capital',
-    title: 'Singaporean Venture Capital Group (SG)',
+    title: 'Venture & Growth Capital (SG)',
     seeking: 'Technology, AI & High-Growth Enterprises',
     capitalRange: '$20M – $80M',
     markets: 'Singapore, Japan, South Korea',
     horizon: '5 – 8 Years',
     description:
-      'A Singapore-headquartered venture capital group with an active portfolio across enterprise software, artificial intelligence, deep-tech and climate-focused businesses. Seeking Series B through D funding rounds led by technically differentiated founding teams with demonstrable revenue traction and credible Asia-Pacific expansion strategies. Investor identity protected under LEN confidentiality framework.',
+      'A venture capital group with an active portfolio across enterprise software, artificial intelligence, deep-tech and climate-focused businesses. Seeking Series B through D funding rounds led by technically differentiated founding teams with demonstrable revenue traction and credible Asia-Pacific expansion strategies. Investor identity protected under LEN confidentiality framework.',
     requirements: [
       'Series B, C or D funding stage',
       'ARR of $2M or above preferred',
@@ -58,15 +61,16 @@ const requestsData = {
     ],
   },
   'zurich-institutional-fund': {
-    flag: '🇨🇭',
+    countryCode: 'CH',
+    region: 'CH',
     type: 'Institutional Investment Fund',
-    title: 'Zürich Institutional Wealth Fund (CH)',
+    title: 'Institutional Investment Fund (CH)',
     seeking: 'Infrastructure, Renewables & Core Real Assets',
     capitalRange: '€100M – €350M',
     markets: 'DACH Region, Benelux',
     horizon: '10 – 25 Years',
     description:
-      'A Zürich-based institutional fund managing long-duration mandates on behalf of pension funds and high-net-worth family principals. Focused on core-plus infrastructure, utility-scale renewable energy and core real assets across Switzerland, Germany, Austria and the Benelux region. Investor identity held under strict LEN confidentiality protocols.',
+      'An institutional investment fund managing long-duration mandates on behalf of pension funds and high-net-worth family principals. Focused on core-plus infrastructure, utility-scale renewable energy and core real assets across Switzerland, Germany, Austria and the Benelux region. Investor identity held under strict LEN confidentiality protocols.',
     requirements: [
       'Utility-scale renewable energy (solar >50MW, wind >30MW) or core infrastructure',
       'Government-backed revenue (PPA, FIT, CfD or equivalent)',
@@ -76,15 +80,16 @@ const requestsData = {
     ],
   },
   'new-york-private-equity': {
-    flag: '🇺🇸',
+    countryCode: 'US',
+    region: 'US',
     type: 'Private Equity & Buyout Capital',
-    title: 'New York Private Equity Group (USA)',
+    title: 'Private Equity & Buyout Capital (US)',
     seeking: 'Healthcare, Industrials & Business Services',
     capitalRange: '$100M – $400M',
     markets: 'USA, Canada, United Kingdom',
     horizon: '4 – 8 Years',
     description:
-      'A New York-based private equity group deploying buyout and growth equity capital into mid-market companies within healthcare services, industrial manufacturing and business services. Preference for founder-led or management-backed situations offering operational improvement potential, strong free cash flow and a realistic exit within 4–8 years. Investor identity protected per LEN privacy framework.',
+      'A private equity group deploying buyout and growth equity capital into mid-market companies within healthcare services, industrial manufacturing and business services. Preference for founder-led or management-backed situations offering operational improvement potential, strong free cash flow and a realistic exit within 4–8 years. Investor identity protected per LEN privacy framework.',
     requirements: [
       'EBITDA between $8M and $60M',
       'Non-cyclical or defensively positioned business',
@@ -94,15 +99,16 @@ const requestsData = {
     ],
   },
   'abu-dhabi-capital-group': {
-    flag: '🇦🇪',
+    countryCode: 'AE',
+    region: 'AE',
     type: 'Institutional Capital Allocator',
-    title: 'Abu Dhabi Capital Group (UAE)',
+    title: 'Institutional Capital Allocator (UAE)',
     seeking: 'Trophy Assets & Luxury Mixed-Use Developments',
     capitalRange: '$200M – $1B+',
     markets: 'Global — GCC, Europe, Asia',
     horizon: '10 – 20 Years',
     description:
-      'An Abu Dhabi-based institutional capital allocator deploying sovereign-scale mandates into ultra-premium trophy assets and landmark luxury mixed-use developments globally. Targeting iconic waterfront, city-centre and resort destination projects combining hospitality, residential, retail and cultural programming. Only assets of exceptional global stature are considered. Investor identity held in strict confidence per LEN protocols.',
+      'An institutional capital allocator deploying sovereign-scale mandates into ultra-premium trophy assets and landmark luxury mixed-use developments globally. Masterplans targeting iconic waterfront, city-centre and resort destination projects combining hospitality, residential, retail and cultural programming. Only assets of exceptional global stature are considered. Investor identity held in strict confidence per LEN protocols.',
     requirements: [
       'Trophy or landmark asset in a globally recognised location',
       'Total project GDV of $300M or above',
@@ -147,7 +153,14 @@ export default function InvestorRequestDetail({ params }) {
 
         <div className={styles.hero}>
           <div className={styles.heroTop}>
-            <span className={styles.flag}>{req.flag}</span>
+            <div className={styles.flagRegion}>
+              <img
+                src={`https://flagcdn.com/w40/${req.countryCode.toLowerCase()}.png`}
+                alt={req.region}
+                className={styles.flagIcon}
+              />
+              <span className={styles.region}>{req.region}</span>
+            </div>
             <span className={styles.typeTag}>{req.type}</span>
           </div>
           <h1 className={styles.title}>{req.title}</h1>

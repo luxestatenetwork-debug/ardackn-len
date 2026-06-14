@@ -117,13 +117,18 @@
 .flagRegion {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
-.flag {
-  font-size: 1.8rem;
-  line-height: 1;
+.flagIcon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  object-fit: cover;
   flex-shrink: 0;
+  border: 1.5px solid rgba(197, 165, 94, 0.35);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  display: block;
 }
 
 .region {
@@ -131,7 +136,7 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.48);
 }
 
 .typeTag {

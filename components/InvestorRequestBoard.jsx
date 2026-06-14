@@ -8,9 +8,9 @@ import styles from './InvestorRequestBoard.module.css';
 const requests = [
   {
     id: 'london-family-office',
-    flag: '🇬🇧',
-    region: 'United Kingdom',
-    designation: 'London Family Office (UK)',
+    countryCode: 'GB',
+    region: 'GB',
+    designation: 'Multigenerational Family Office (UK)',
     type: 'Multi-Generational Family Office',
     focus: 'Prime Commercial Real Estate & Luxury Hospitality',
     capital: '£80M – £220M',
@@ -18,9 +18,9 @@ const requests = [
   },
   {
     id: 'dubai-sovereign-allocator',
-    flag: '🇦🇪',
-    region: 'UAE',
-    designation: 'Dubai Sovereign Wealth Allocator (UAE)',
+    countryCode: 'AE',
+    region: 'AE',
+    designation: 'Sovereign Capital Allocator (UAE)',
     type: 'Sovereign Capital Allocator',
     focus: 'Luxury Hotel Acquisitions & Mixed-Use Developments',
     capital: '$150M – $500M',
@@ -28,9 +28,9 @@ const requests = [
   },
   {
     id: 'singapore-venture-capital',
-    flag: '🇸🇬',
-    region: 'Singapore',
-    designation: 'Singaporean Venture Capital Group (SG)',
+    countryCode: 'SG',
+    region: 'SG',
+    designation: 'Venture & Growth Capital (SG)',
     type: 'Venture & Growth Capital',
     focus: 'Technology, AI & High-Growth Enterprises',
     capital: '$20M – $80M',
@@ -38,9 +38,9 @@ const requests = [
   },
   {
     id: 'zurich-institutional-fund',
-    flag: '🇨🇭',
-    region: 'Switzerland',
-    designation: 'Zürich Institutional Wealth Fund (CH)',
+    countryCode: 'CH',
+    region: 'CH',
+    designation: 'Institutional Investment Fund (CH)',
     type: 'Institutional Investment Fund',
     focus: 'Infrastructure, Renewables & Core Real Assets',
     capital: '€100M – €350M',
@@ -48,9 +48,9 @@ const requests = [
   },
   {
     id: 'new-york-private-equity',
-    flag: '🇺🇸',
-    region: 'United States',
-    designation: 'New York Private Equity Group (USA)',
+    countryCode: 'US',
+    region: 'US',
+    designation: 'Private Equity & Buyout Capital (US)',
     type: 'Private Equity & Buyout Capital',
     focus: 'Healthcare, Industrials & Business Services',
     capital: '$100M – $400M',
@@ -58,9 +58,9 @@ const requests = [
   },
   {
     id: 'abu-dhabi-capital-group',
-    flag: '🇦🇪',
-    region: 'Abu Dhabi',
-    designation: 'Abu Dhabi Capital Group (UAE)',
+    countryCode: 'AE',
+    region: 'AE',
+    designation: 'Institutional Capital Allocator (UAE)',
     type: 'Institutional Capital Allocator',
     focus: 'Trophy Assets & Luxury Mixed-Use Developments',
     capital: '$200M – $1B+',
@@ -89,10 +89,14 @@ export default function InvestorRequestBoard() {
           {requests.map((req) => (
             <div key={req.id} className={styles.card}>
 
-              {/* Top row: flag + region + type tag */}
+              {/* Top row: flag icon + region code + type tag */}
               <div className={styles.cardTop}>
                 <div className={styles.flagRegion}>
-                  <span className={styles.flag}>{req.flag}</span>
+                  <img
+                    src={`https://flagcdn.com/w40/${req.countryCode.toLowerCase()}.png`}
+                    alt={req.region}
+                    className={styles.flagIcon}
+                  />
                   <span className={styles.region}>{req.region}</span>
                 </div>
                 <span className={styles.typeTag}>{req.type}</span>
