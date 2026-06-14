@@ -13,7 +13,10 @@
   --gold-primary: #C5A55E;
   --gold-secondary: #FFE135;
   --gold-dark: #BFA55A;
-  --gold-glow: rgba(255, 225, 53, 0.15);
+  --gold-glow: rgba(197, 165, 94, 0.2);
+
+  /* Alias used by LEN components */
+  --lux-gold: #C5A55E;
   
   --text-primary: #ffffff;
   --text-secondary: #a0a0b0;

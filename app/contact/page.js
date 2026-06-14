@@ -85,6 +85,14 @@ export default function ContactPage() {
               <div className={styles.contactDetails}>
                 <p>✉️ Corporate Registry: executive@luxestatenetwork.com</p>
                 <p>🕒 Core Advisory Hours: 09:00 - 18:00 (GMT)</p>
+                <div className={styles.linkedinSection} style={{ marginTop: '1rem', display: 'flex', alignItems: 'center' }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" width="24" height="24" fill="var(--lux-gold)" style={{ marginRight: '8px' }}>
+                    <path d="M34 17c0 9.389-7.611 17-17 17S0 26.389 0 17 7.611 0 17 0s17 7.611 17 17zM9.735 12.308h4.529V27.6h-4.53V12.308zm2.264-5.378c1.453 0 2.632 1.18 2.632 2.633 0 1.453-1.179 2.632-2.632 2.632-1.453 0-2.632-1.179-2.632-2.632 0-1.453 1.179-2.633 2.632-2.633zM20.667 23.977c0-5.535-3.007-7.852-6.817-7.852-1.923 0-3.202.806-3.903 1.353v-1.146h-4.528c.06 1.034 0 15.292 0 15.292h4.528v-9.098c0-.489.035-.978.173-1.326.342-.885 1.122-1.804 2.428-1.804 1.715 0 2.404 1.302 2.404 3.212v8.016h4.528v-8.599z"/>
+                  </svg>
+                  <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--lux-gold)', fontWeight: '600', textDecoration: 'none' }}>
+                    Connect on LinkedIn
+                  </a>
+                </div>
               </div>
             </div>
           </div>

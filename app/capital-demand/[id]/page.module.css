@@ -1,0 +1,256 @@
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%);
+  padding: 80px 0 120px;
+  color: #fff;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.backLink {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  margin-bottom: 48px;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: var(--lux-gold);
+}
+
+/* ─── Hero ─── */
+.hero {
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.heroTop {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.categoryTag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lux-gold);
+  border: 1px solid rgba(197,165,94,0.4);
+  border-radius: 4px;
+  padding: 5px 12px;
+  background: rgba(197,165,94,0.05);
+}
+
+.title {
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.capitalDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.capitalLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.capitalFigure {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--lux-gold);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* ─── Layout ─── */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ─── Cards ─── */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.card {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(197,165,94,0.2);
+  border-radius: 12px;
+  padding: 36px;
+}
+
+.cardHeading {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lux-gold);
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+}
+
+.reqList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.reqItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+}
+
+.reqBullet {
+  color: var(--lux-gold);
+  font-size: 0.7rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+/* ─── Sidebar ─── */
+.metaCard {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(197,165,94,0.3);
+  border-radius: 12px;
+  padding: 32px;
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.metaHeading {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lux-gold);
+  margin-bottom: 4px;
+}
+
+.metaRow {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.metaRow:last-of-type {
+  border-bottom: none;
+}
+
+.metaLabel {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+.metaValue {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+}
+
+.contactBtn {
+  display: block;
+  padding: 14px 24px;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #000;
+  background: var(--lux-gold);
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 8px;
+  transition: background 0.25s, box-shadow 0.25s;
+}
+
+.contactBtn:hover {
+  background: #e0c06a;
+  box-shadow: 0 6px 20px rgba(197,165,94,0.35);
+}
+
+/* ─── Not Found ─── */
+.notFound {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  color: #fff;
+  background: #050505;
+}
+
+.backBtn {
+  color: var(--lux-gold);
+  text-decoration: none;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .metaCard {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner {
+    padding: 0 20px;
+  }
+  .page {
+    padding: 60px 0 80px;
+  }
+}
