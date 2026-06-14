@@ -3,106 +3,112 @@ import VerificationBadge from '../../../components/VerificationBadge';
 import styles from './page.module.css';
 
 const requestsData = {
-  'dubai-family-office': {
-    flag: '🇦🇪',
-    type: 'Family Office',
-    title: 'Dubai Family Office',
-    seeking: 'Luxury Hotel Acquisitions',
-    capitalRange: '$50M – $250M',
-    markets: 'UAE, Saudi Arabia, Qatar',
-    horizon: '2 – 5 Years',
-    description:
-      'An established Dubai-based family office with over two decades of hospitality investment experience. Currently seeking strategic hotel acquisitions in the GCC and Mediterranean regions. Preference for branded 5-star properties with proven revenue streams and upside repositioning potential.',
-    requirements: [
-      '5-star or ultra-luxury branded hotel assets',
-      'Minimum 80 keys, maximum 500 keys',
-      'Existing revenue with 3-year track record',
-      'Clear title and no occupancy encumbrances',
-    ],
-  },
-  'london-private-equity': {
+  'london-family-office': {
     flag: '🇬🇧',
-    type: 'Private Equity',
-    title: 'London Private Equity Group',
-    seeking: 'Prime Commercial Real Estate',
-    capitalRange: '£20M – £100M',
-    markets: 'UK, Germany, Netherlands',
+    type: 'Multi-Generational Family Office',
+    title: 'London Family Office (UK)',
+    seeking: 'Prime Commercial Real Estate & Luxury Hospitality',
+    capitalRange: '£80M – £220M',
+    markets: 'UK, Germany, France',
     horizon: '3 – 7 Years',
     description:
-      'A London-headquartered private equity firm specialising in value-add commercial real estate across Western Europe. Targeting Class-A office buildings, logistics hubs and mixed-use developments in prime city-centre locations.',
+      'A multi-generational London family office with deep roots in European real estate and hospitality markets. This capital group seeks institutional-grade commercial buildings and branded hospitality assets across Western Europe, with a preference for established revenue profiles, strong tenant covenants and value-add repositioning potential. Specific investor identity is kept confidential in accordance with LEN privacy protocols.',
     requirements: [
-      'Class-A or Class-B+ commercial buildings',
-      'WAULT above 4 years preferred',
-      'Located in Top 10 European cities',
-      'Freehold or long-leasehold title',
+      'Class-A commercial or luxury hospitality assets',
+      'Minimum lot size £15M, maximum £100M',
+      'WAULT above 4 years (commercial) or 3-year RevPAR track record (hospitality)',
+      'Prime city-centre or gateway market locations',
+      'Freehold or long-leasehold title preferred',
     ],
   },
-  'singapore-capital-group': {
+  'dubai-sovereign-allocator': {
+    flag: '🇦🇪',
+    type: 'Sovereign Capital Allocator',
+    title: 'Dubai Sovereign Wealth Allocator (UAE)',
+    seeking: 'Luxury Hotel Acquisitions & Mixed-Use Developments',
+    capitalRange: '$150M – $500M',
+    markets: 'GCC, Europe, Asia-Pacific',
+    horizon: '10 – 20 Years',
+    description:
+      'A sovereign-backed capital allocator based in Dubai, deploying long-duration capital into luxury hotel acquisitions and large-scale mixed-use developments across the GCC, European gateway cities and Asia-Pacific. This entity prioritises trophy assets with global brand affiliations, strong international demand fundamentals and long-term capital appreciation. Investor identity maintained under strict confidentiality per LEN protocols.',
+    requirements: [
+      'Trophy-grade 5-star or ultra-luxury hotel assets',
+      'Minimum 150 keys; large mixed-use GDV $200M+',
+      'International brand affiliation preferred',
+      'Located in recognised gateway or resort destination markets',
+      'Sustainability credentials and ESG alignment mandatory',
+    ],
+  },
+  'singapore-venture-capital': {
     flag: '🇸🇬',
-    type: 'Venture Capital',
-    title: 'Singapore Capital Group',
-    seeking: 'AI & Technology Companies',
-    capitalRange: '$5M – $50M',
+    type: 'Venture & Growth Capital',
+    title: 'Singaporean Venture Capital Group (SG)',
+    seeking: 'Technology, AI & High-Growth Enterprises',
+    capitalRange: '$20M – $80M',
     markets: 'Singapore, Japan, South Korea',
     horizon: '5 – 8 Years',
     description:
-      'A Singapore-based venture capital firm with a strong portfolio in deep-tech, enterprise AI and climate technology. Seeking Series B and C investment opportunities with founding teams possessing technical depth and international expansion plans.',
+      'A Singapore-headquartered venture capital group with an active portfolio across enterprise software, artificial intelligence, deep-tech and climate-focused businesses. Seeking Series B through D funding rounds led by technically differentiated founding teams with demonstrable revenue traction and credible Asia-Pacific expansion strategies. Investor identity protected under LEN confidentiality framework.',
     requirements: [
-      'Series B or C funding round',
-      'Recurring ARR of $2M+ preferred',
-      'Founding team with technical IP',
-      'Asia-Pacific market presence',
+      'Series B, C or D funding stage',
+      'ARR of $2M or above preferred',
+      'Proprietary technology or data competitive advantage',
+      'Founding team with domain and technical depth',
+      'Established or credible Asia-Pacific market roadmap',
     ],
   },
-  'zurich-wealth-fund': {
+  'zurich-institutional-fund': {
     flag: '🇨🇭',
-    type: 'Institutional Fund',
-    title: 'Zürich Wealth Fund',
-    seeking: 'Renewable Energy Infrastructure',
-    capitalRange: '€80M – €300M',
-    markets: 'Switzerland, Austria, Germany',
+    type: 'Institutional Investment Fund',
+    title: 'Zürich Institutional Wealth Fund (CH)',
+    seeking: 'Infrastructure, Renewables & Core Real Assets',
+    capitalRange: '€100M – €350M',
+    markets: 'DACH Region, Benelux',
     horizon: '10 – 25 Years',
     description:
-      'A Swiss institutional fund managing long-duration capital on behalf of pension funds and sovereign clients. Focused on renewable energy infrastructure including utility-scale solar, onshore wind and battery storage in DACH countries.',
+      'A Zürich-based institutional fund managing long-duration mandates on behalf of pension funds and high-net-worth family principals. Focused on core-plus infrastructure, utility-scale renewable energy and core real assets across Switzerland, Germany, Austria and the Benelux region. Investor identity held under strict LEN confidentiality protocols.',
     requirements: [
-      'Fully permitted greenfield or brownfield projects',
-      'Government-backed PPA or FIT agreements',
-      'Minimum project capacity of 50MW',
-      'IRR target 7–11% gross',
+      'Utility-scale renewable energy (solar >50MW, wind >30MW) or core infrastructure',
+      'Government-backed revenue (PPA, FIT, CfD or equivalent)',
+      'Fully permitted or late-stage development projects',
+      'Target net IRR: 6–10% over long-duration hold',
+      'ESG-compliant and aligned with Swiss sustainability standards',
     ],
   },
-  'new-york-family-office': {
+  'new-york-private-equity': {
     flag: '🇺🇸',
-    type: 'Family Office',
-    title: 'New York Family Office',
-    seeking: 'Private Equity & Buyout Deals',
-    capitalRange: '$100M – $500M',
-    markets: 'USA, Canada, UK',
+    type: 'Private Equity & Buyout Capital',
+    title: 'New York Private Equity Group (USA)',
+    seeking: 'Healthcare, Industrials & Business Services',
+    capitalRange: '$100M – $400M',
+    markets: 'USA, Canada, United Kingdom',
     horizon: '4 – 8 Years',
     description:
-      'A multi-generational US family office with a diversified private markets portfolio. Seeking co-investment and lead buyout opportunities in healthcare, industrial manufacturing, and business services sectors across North America and the UK.',
+      'A New York-based private equity group deploying buyout and growth equity capital into mid-market companies within healthcare services, industrial manufacturing and business services. Preference for founder-led or management-backed situations offering operational improvement potential, strong free cash flow and a realistic exit within 4–8 years. Investor identity protected per LEN privacy framework.',
     requirements: [
-      'EBITDA $10M+',
-      'Strong management team willing to roll equity',
-      'Non-cyclical or defensive industry preferred',
-      'Clear exit path within 5–8 years',
+      'EBITDA between $8M and $60M',
+      'Non-cyclical or defensively positioned business',
+      'Management team willing to retain meaningful equity',
+      'Clear operational value creation thesis',
+      'North American or UK domicile preferred',
     ],
   },
-  'abu-dhabi-sovereign': {
+  'abu-dhabi-capital-group': {
     flag: '🇦🇪',
-    type: 'Sovereign Fund',
-    title: 'Abu Dhabi Capital Allocator',
-    seeking: 'Luxury Mixed-Use Developments',
-    capitalRange: '$200M – $1B',
-    markets: 'GCC, Europe, Asia',
+    type: 'Institutional Capital Allocator',
+    title: 'Abu Dhabi Capital Group (UAE)',
+    seeking: 'Trophy Assets & Luxury Mixed-Use Developments',
+    capitalRange: '$200M – $1B+',
+    markets: 'Global — GCC, Europe, Asia',
     horizon: '10 – 20 Years',
     description:
-      'A capital allocator backed by Abu Dhabi sovereign wealth, seeking large-scale luxury mixed-use development projects globally. Preference for trophy assets combining residential, hospitality, retail and cultural components in strategic gateway cities.',
+      'An Abu Dhabi-based institutional capital allocator deploying sovereign-scale mandates into ultra-premium trophy assets and landmark luxury mixed-use developments globally. Targeting iconic waterfront, city-centre and resort destination projects combining hospitality, residential, retail and cultural programming. Only assets of exceptional global stature are considered. Investor identity held in strict confidence per LEN protocols.',
     requirements: [
-      'Trophy waterfront or city-centre locations',
-      'Total GDV of $500M or above preferred',
-      'International brand partnerships welcome',
-      'Sustainability-led design mandatory',
+      'Trophy or landmark asset in a globally recognised location',
+      'Total project GDV of $300M or above',
+      'Combination of hospitality, residential and retail programming preferred',
+      'International brand and design partnerships welcomed',
+      'Sustainability-led masterplan and ESG governance mandatory',
     ],
   },
 };
@@ -115,8 +121,8 @@ export function generateMetadata({ params }) {
   const req = requestsData[params.id];
   if (!req) return { title: 'Not Found' };
   return {
-    title: `${req.title} – Investor Request | Lux Estate Network`,
-    description: req.description,
+    title: `${req.title} – Investor Profile | Lux Estate Network`,
+    description: req.description.slice(0, 160),
   };
 }
 
@@ -126,7 +132,7 @@ export default function InvestorRequestDetail({ params }) {
   if (!req) {
     return (
       <main className={styles.notFound}>
-        <h1>Request Not Found</h1>
+        <h1>Profile Not Found</h1>
         <Link href="/" className={styles.backBtn}>← Back to Home</Link>
       </main>
     );
@@ -136,7 +142,7 @@ export default function InvestorRequestDetail({ params }) {
     <main className={styles.page}>
       <div className={styles.inner}>
         <Link href="/#investor-request-board" className={styles.backLink}>
-          ← Back to Investor Requests
+          ← Back to Investor Demand
         </Link>
 
         <div className={styles.hero}>
@@ -151,11 +157,11 @@ export default function InvestorRequestDetail({ params }) {
         <div className={styles.layout}>
           <div className={styles.main}>
             <div className={styles.card}>
-              <h2 className={styles.cardHeading}>Investment Overview</h2>
+              <h2 className={styles.cardHeading}>Capital Profile Overview</h2>
               <p className={styles.description}>{req.description}</p>
             </div>
             <div className={styles.card}>
-              <h2 className={styles.cardHeading}>Key Requirements</h2>
+              <h2 className={styles.cardHeading}>Investment Requirements</h2>
               <ul className={styles.reqList}>
                 {req.requirements.map((r, i) => (
                   <li key={i} className={styles.reqItem}>
@@ -169,13 +175,13 @@ export default function InvestorRequestDetail({ params }) {
 
           <aside className={styles.sidebar}>
             <div className={styles.metaCard}>
-              <h3 className={styles.metaHeading}>Investment Parameters</h3>
+              <h3 className={styles.metaHeading}>Capital Parameters</h3>
               <div className={styles.metaRow}>
-                <span className={styles.metaLabel}>Seeking</span>
+                <span className={styles.metaLabel}>Investment Focus</span>
                 <span className={styles.metaValue}>{req.seeking}</span>
               </div>
               <div className={styles.metaRow}>
-                <span className={styles.metaLabel}>Capital Range</span>
+                <span className={styles.metaLabel}>Available Capital</span>
                 <span className={styles.metaValue}>{req.capitalRange}</span>
               </div>
               <div className={styles.metaRow}>
@@ -189,6 +195,9 @@ export default function InvestorRequestDetail({ params }) {
               <Link href="/contact" className={styles.contactBtn}>
                 Submit an Opportunity
               </Link>
+              <p className={styles.confidentialNote}>
+                Investor identity is maintained under strict confidentiality in accordance with LEN network protocols.
+              </p>
             </div>
           </aside>
         </div>

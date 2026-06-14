@@ -196,6 +196,17 @@
   box-shadow: 0 6px 20px rgba(197,165,94,0.35);
 }
 
+.confidentialNote {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.22);
+  line-height: 1.6;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 14px;
+  margin-top: 4px;
+}
+
+
 /* ─── Not Found ─── */
 .notFound {
   min-height: 80vh;
