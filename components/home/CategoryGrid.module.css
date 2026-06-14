@@ -1,0 +1,177 @@
+.section {
+  background-color: var(--bg-primary);
+  padding: 100px 24px;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  border-color: var(--gold-primary);
+  background: var(--bg-tertiary);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 15px var(--gold-glow);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  color: var(--gold-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.card:hover .icon {
+  color: var(--gold-primary);
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px var(--gold-glow));
+}
+
+.name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.consultancyCard {
+  grid-column: span 1;
+  position: relative;
+}
+
+.consultancyCard.open {
+  grid-column: span 2;
+  border-color: var(--gold-primary);
+  background: var(--bg-tertiary);
+  align-items: stretch;
+}
+
+.consultancyHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.consultancyCard.open .consultancyHeader {
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+}
+
+.chevron {
+  font-size: 0.75rem;
+  color: var(--gold-primary);
+}
+
+.subCategories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  margin-top: 16px;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.subLink {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 12px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-smooth);
+}
+
+.subLink:hover {
+  border-color: var(--gold-secondary);
+  background: #20202a;
+}
+
+.subIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--gold-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.subLink:hover .subIcon {
+  color: var(--gold-primary);
+  transform: scale(1.1);
+}
+
+.subName {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .consultancyCard.open {
+    grid-column: span 2;
+  }
+  .subCategories {
+    grid-template-columns: 1fr;
+  }
+}

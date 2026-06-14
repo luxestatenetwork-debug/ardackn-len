@@ -1,0 +1,70 @@
+.banner {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  max-width: 420px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 15px var(--gold-glow);
+  z-index: 1000;
+  animation: slideInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: var(--glass-blur);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btnDecline {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+}
+
+.btnDecline:hover {
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btnAccept {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  background: linear-gradient(135deg, var(--gold-secondary) 0%, var(--gold-primary) 100%);
+  color: var(--bg-primary);
+  font-weight: 600;
+}
+
+.btnAccept:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 10px var(--gold-primary);
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

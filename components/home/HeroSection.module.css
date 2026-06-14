@@ -1,0 +1,266 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding: 0 6%;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.visualOverlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url('/images/luxury_hero_bg.png');
+  background-size: cover;
+  background-position: right center;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.gradientOverlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(90deg, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.7) 40%, transparent 100%),
+              linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 20%);
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: var(--gold-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.badge::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background-color: var(--gold-primary);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.goldText {
+  color: var(--gold-primary);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #dddddd;
+  max-width: 550px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.requestAccessWrapper {
+  margin-bottom: 30px;
+}
+
+.primaryAccessBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--gold-secondary) 0%, var(--gold-primary) 100%);
+  color: #000;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  text-decoration: none;
+}
+
+.primaryAccessBtn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.4);
+}
+
+.packageText {
+  display: block;
+  font-size: 0.75rem;
+  color: #aaa;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.secondaryBtns {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.outlineBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--gold-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 4px;
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.outlineBtn:hover {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: var(--gold-primary);
+}
+
+.featuresRow {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.featureIcon {
+  color: var(--gold-primary);
+  display: flex;
+  align-items: center;
+}
+
+.featureText {
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+}
+
+.categoriesBar {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1400px;
+  height: 80px;
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  z-index: 3;
+  padding: 0 32px;
+}
+
+.catLabel {
+  color: var(--gold-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+}
+
+.catDivider {
+  width: 1px;
+  height: 30px;
+  background: rgba(255,255,255,0.1);
+}
+
+.catItem {
+  color: #aaa;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.catItem:hover {
+  color: #fff;
+}
+
+.catIcon {
+  width: 1.3rem;
+  height: 1.3rem;
+  color: var(--gold-primary);
+  opacity: 0.9;
+}
+
+@media (max-width: 1200px) {
+  .categoriesBar {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .badge::after {
+    display: none;
+  }
+  .title {
+    font-size: 3rem;
+  }
+  .secondaryBtns {
+    flex-direction: column;
+    width: 100%;
+  }
+  .featuresRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}

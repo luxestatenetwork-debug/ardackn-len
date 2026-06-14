@@ -1,0 +1,573 @@
+/* ─── Admin Panel — Lux Estate Network ─────────────────────────── */
+
+.wrapper {
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  padding: 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: calc(100vh - 70px);
+}
+
+/* ─── Sidebar ─────────────────────────────────────────────────── */
+.sidebar {
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+}
+
+.adminBadge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 12px;
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.adminIcon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.adminInfo h3 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--gold-secondary);
+  margin: 0;
+}
+
+.adminInfo span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: left;
+  padding: 11px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navBtn:hover {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-primary);
+}
+
+.navBtn.active {
+  background: rgba(201, 168, 76, 0.1);
+  color: var(--gold-secondary);
+  border-left: 3px solid var(--gold-primary);
+}
+
+.navIcon {
+  font-size: 1.1rem;
+  width: 22px;
+  text-align: center;
+}
+
+.navDivider {
+  height: 1px;
+  background: var(--border-color);
+  margin: 8px 0;
+}
+
+/* ─── Main Content ────────────────────────────────────────────── */
+.main {
+  padding: 40px 48px;
+  overflow-y: auto;
+}
+
+/* ─── Panel Header ────────────────────────────────────────────── */
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.panelTitle {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--gold-secondary);
+}
+
+.panelSubtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ─── Stat Cards Grid ─────────────────────────────────────────── */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.statCard {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.statCard:hover {
+  border-color: var(--gold-primary);
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.1);
+}
+
+.statIcon {
+  font-size: 1.5rem;
+}
+
+.statValue {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.statGold .statValue { color: var(--gold-secondary); }
+.statGreen .statValue { color: var(--accent-green); }
+.statRed .statValue { color: var(--accent-red); }
+.statBlue .statValue { color: #60a5fa; }
+
+/* ─── Table ───────────────────────────────────────────────────── */
+.tableWrapper {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tableTitle {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.filterRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.filterSelect, .filterInput {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  padding: 7px 12px;
+  border-radius: 6px;
+  outline: none;
+}
+
+.filterSelect:focus, .filterInput:focus {
+  border-color: var(--gold-primary);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 14px 20px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  vertical-align: middle;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background: rgba(255,255,255,0.02);
+}
+
+/* ─── Badges ──────────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badgeAdmin {
+  background: rgba(201, 168, 76, 0.15);
+  color: var(--gold-secondary);
+  border: 1px solid rgba(201, 168, 76, 0.4);
+}
+
+.badgeOwner {
+  background: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+}
+
+.badgeInvestor {
+  background: rgba(100, 116, 139, 0.15);
+  color: #94a3b8;
+  border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+.badgeActive {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--accent-green);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badgePaused {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--accent-red);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* ─── Action Buttons ──────────────────────────────────────────── */
+.actionBtns {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.btnSm {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.btnGold {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: rgba(201, 168, 76, 0.35);
+  color: var(--gold-secondary);
+}
+.btnGold:hover {
+  background: rgba(201, 168, 76, 0.2);
+}
+
+.btnRed {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: var(--accent-red);
+}
+.btnRed:hover {
+  background: rgba(239, 68, 68, 0.18);
+}
+
+.btnBlue {
+  background: rgba(96, 165, 250, 0.08);
+  border-color: rgba(96, 165, 250, 0.35);
+  color: #60a5fa;
+}
+.btnBlue:hover {
+  background: rgba(96, 165, 250, 0.16);
+}
+
+.btnGreen {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: var(--accent-green);
+}
+.btnGreen:hover {
+  background: rgba(16, 185, 129, 0.18);
+}
+
+/* ─── Slot Editor ─────────────────────────────────────────────── */
+.slotEditor {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.slotInput {
+  width: 60px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.slotInput:focus {
+  border-color: var(--gold-primary);
+  outline: none;
+}
+
+/* ─── Finance Tab ─────────────────────────────────────────────── */
+.financeTabRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.financeTab {
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background: none;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.financeTab.active {
+  background: rgba(201, 168, 76, 0.12);
+  border-color: var(--gold-primary);
+  color: var(--gold-secondary);
+}
+
+/* ─── Chart ───────────────────────────────────────────────────── */
+.chartBox {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 28px;
+  margin-bottom: 28px;
+}
+
+.chartTitle {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.barChart {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 160px;
+}
+
+.barCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+}
+
+.bar {
+  width: 100%;
+  background: linear-gradient(to top, var(--gold-primary), var(--gold-secondary));
+  border-radius: 4px 4px 0 0;
+  min-height: 4px;
+  transition: height 0.4s ease;
+  box-shadow: 0 0 8px rgba(201, 168, 76, 0.3);
+}
+
+.barLabel {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.barValue {
+  font-size: 0.7rem;
+  color: var(--gold-secondary);
+  font-weight: 600;
+}
+
+/* ─── Modal ───────────────────────────────────────────────────── */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 36px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.modalTitle {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--gold-secondary);
+  margin-bottom: 20px;
+}
+
+.modalField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.modalLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.modalInput, .modalTextarea {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.modalInput:focus, .modalTextarea:focus {
+  border-color: var(--gold-primary);
+  outline: none;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  justify-content: flex-end;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, var(--gold-secondary), var(--gold-primary));
+  color: var(--bg-primary);
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btnPrimary:hover { filter: brightness(1.1); }
+
+.btnSecondary {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnSecondary:hover {
+  border-color: var(--text-muted);
+  color: var(--text-primary);
+}
+
+/* ─── Loading / Empty ─────────────────────────────────────────── */
+.loading {
+  text-align: center;
+  padding: 80px;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.emptyRow td {
+  text-align: center;
+  padding: 48px !important;
+  color: var(--text-muted);
+}
+
+/* ─── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-x: auto;
+  }
+  .main {
+    padding: 24px 16px;
+  }
+}

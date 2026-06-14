@@ -1,0 +1,18 @@
+.disclaimerContainer {
+  background-color: #0d0d10;
+  border-top: 1px solid var(--border-color);
+  padding: 12px 24px;
+  text-align: center;
+}
+
+.text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.bold {
+  color: var(--gold-primary);
+  font-weight: 600;
+}

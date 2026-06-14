@@ -1,0 +1,253 @@
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px var(--gold-glow);
+}
+
+.imageContainer {
+  position: relative;
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #050507;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.categoryBadge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(10, 10, 12, 0.85);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.location {
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.views {
+  font-weight: 500;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.4;
+  height: 2.8em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding-top: 16px;
+  margin-top: auto;
+}
+
+.price {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold-secondary);
+}
+
+.detailsBtn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+}
+
+.detailsBtn:hover {
+  background: var(--gold-primary);
+  color: var(--bg-primary);
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 10px var(--gold-glow);
+}
+
+/* ─── Like / Dislike Reaction Row ─────────────────────────────── */
+.reactionRow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 14px;
+}
+
+.reactionDivider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0 4px;
+}
+
+.reactionBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  flex: 1;
+  justify-content: center;
+}
+
+.reactionBtn:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.reactionBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Like active state — gold glow */
+.likeBtn {
+  border-color: rgba(201, 168, 76, 0.15);
+}
+
+.likeBtn:hover {
+  border-color: rgba(201, 168, 76, 0.4);
+  color: var(--gold-secondary);
+  background: rgba(201, 168, 76, 0.08);
+}
+
+.likeActive {
+  background: rgba(201, 168, 76, 0.15) !important;
+  border-color: var(--gold-primary) !important;
+  color: var(--gold-secondary) !important;
+  box-shadow: 0 0 10px rgba(201, 168, 76, 0.25);
+}
+
+.likeActive svg {
+  filter: drop-shadow(0 0 4px rgba(201, 168, 76, 0.6));
+}
+
+/* Dislike active state — cool red/crimson */
+.dislikeBtn {
+  border-color: rgba(220, 60, 60, 0.1);
+}
+
+.dislikeBtn:hover {
+  border-color: rgba(220, 60, 60, 0.35);
+  color: #e05252;
+  background: rgba(220, 60, 60, 0.07);
+}
+
+.dislikeActive {
+  background: rgba(220, 60, 60, 0.12) !important;
+  border-color: rgba(220, 60, 60, 0.5) !important;
+  color: #e05252 !important;
+  box-shadow: 0 0 10px rgba(220, 60, 60, 0.2);
+}
+
+.dislikeActive svg {
+  filter: drop-shadow(0 0 4px rgba(220, 60, 60, 0.5));
+}
+
+.ownerRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.ownerLabel {
+  color: var(--text-muted);
+}
+
+.ownerName {
+  color: var(--text-primary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.premiumCrown {
+  background: linear-gradient(135deg, #d4af37 0%, #f9e8a2 50%, #aa7c11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  border: 1px solid #d4af37;
+  padding: 1px 5px;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+}
+

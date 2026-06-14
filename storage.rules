@@ -1,0 +1,39 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Check if the user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Check if the user is the owner of the resource
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Check if user is admin
+    function isAdmin() {
+      return isAuthenticated() && 
+        firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    // User Profile Pictures
+    match /avatars/{userId}/{allPaths=**} {
+      allow read: if true; // Publicly viewable avatars
+      allow write: if isOwner(userId) || isAdmin();
+    }
+
+    // Listing Images & PDFs
+    match /listings/{listingId}/{allPaths=**} {
+      allow read: if true; // Publicly viewable images and pdfs
+      allow write: if isAuthenticated() && 
+                    (firestore.get(/databases/(default)/documents/listings/$(listingId)).data.ownerId == request.auth.uid || 
+                     isAdmin() ||
+                     // For new listings being created (where listing document doesn't exist yet)
+                     // We check if they are a listing owner
+                     firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role == 'owner');
+    }
+  }
+}

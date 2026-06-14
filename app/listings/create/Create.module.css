@@ -1,0 +1,389 @@
+.wrapper {
+  position: relative;
+  background-color: var(--bg-primary);
+  min-height: 90vh;
+  padding: 60px 24px;
+  overflow: hidden;
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/abstract_mesh_banana.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.12;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 48px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.priceRow {
+  display: flex;
+  gap: 16px;
+  grid-column: span 2;
+}
+
+.locationRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  grid-column: span 2;
+}
+
+.imageCount {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field:nth-child(1),
+.field:nth-child(2),
+.field:nth-child(5),
+.field:nth-child(6) {
+  grid-column: span 2;
+}
+
+.label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 8px var(--gold-glow);
+}
+
+.imagePreviewGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.previewContainer {
+  position: relative;
+  width: 100%;
+  height: 80px;
+}
+
+.imagePreview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.removePreviewBtn {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--accent-red);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.removePreviewBtn:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+}
+
+.pdfSuccess {
+  font-size: 0.9rem;
+  color: var(--accent-green);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.submitBtn {
+  background: linear-gradient(135deg, var(--gold-secondary) 0%, var(--gold-primary) 100%);
+  color: var(--bg-primary);
+  font-weight: 700;
+  padding: 16px;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 16px;
+  transition: var(--transition-smooth);
+}
+
+.submitBtn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.4);
+}
+
+.loading {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  padding: 100px;
+}
+
+.limitWrapper {
+  background-color: var(--bg-primary);
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.limitCard {
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-red);
+  max-width: 500px;
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.limitTitle {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: #ff8080;
+  margin-bottom: 16px;
+}
+
+.limitText {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.limitActions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.buyBtn {
+  width: 100%;
+  display: block;
+  text-align: center;
+  background: linear-gradient(135deg, var(--gold-secondary) 0%, var(--gold-primary) 100%);
+  color: var(--bg-primary);
+  font-weight: 700;
+  padding: 15px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.buyBtn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.4);
+  transform: translateY(-1px);
+}
+
+.refreshBtn {
+  width: 100%;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.refreshBtn:hover {
+  border-color: var(--gold-primary);
+  color: var(--gold-primary);
+}
+
+.backBtn {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  transition: var(--transition-smooth);
+}
+
+.backBtn:hover {
+  color: var(--text-primary);
+}
+
+/* ── Membership Gate ─────────────────────────────────── */
+.membershipGate {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  max-width: 520px;
+  width: 100%;
+  border-radius: 16px;
+  padding: 48px 40px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(201, 168, 76, 0.1);
+}
+
+.gateLogoRow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.gateBadge {
+  display: inline-block;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: var(--gold-primary);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  margin-bottom: 16px;
+}
+
+.gateTitle {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.gateText {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.gateBenefits {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.gateBenefit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.gateBenefit span {
+  color: var(--gold-primary);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.gatePrice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.gatePriceAmount {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  line-height: 1;
+}
+
+.gatePricePeriod {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .priceRow {
+    flex-direction: column;
+  }
+  .membershipGate {
+    padding: 32px 24px;
+  }
+}
+
