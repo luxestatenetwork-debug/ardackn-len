@@ -1,6 +1,6 @@
 'use client';
 
-import MapPicker from '../../../components/MapPicker';
+
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuthStore } from '../../../store/authStore';
@@ -50,7 +50,7 @@ export default function CreateListingPage() {
     e.preventDefault();
     if (!user) return;
 
-    if (!title || !price || !location || !description || !contactPhone || !contactEmail || !city || !country) {
+    if (!title || !price || !description || !contactPhone || !contactEmail || !city || !country) {
       addToast('Please fill in all required fields.', 'error');
       return;
     }
@@ -322,10 +322,7 @@ export default function CreateListingPage() {
               <input type="text" required value={country} onChange={(e) => setCountry(e.target.value)} className={styles.input} />
             </div>
 
-            <div className={styles.field}>
-                <label className={styles.label}>Placement Location *</label>
-                <MapPicker onSelect={(addr) => setLocation(addr)} />
-            </div>
+
 
             <div className={styles.field}>
               <label className={styles.label}>Video URL (Youtube/Vimeo)</label>
