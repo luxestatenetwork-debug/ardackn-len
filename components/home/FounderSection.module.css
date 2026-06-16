@@ -1,0 +1,279 @@
+/* ── Section ── */
+.section {
+  background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 55% 45% at 0% 50%, rgba(197,165,94,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+}
+
+/* ── Portrait column ── */
+.portraitCol {
+  position: relative;
+}
+
+.portraitFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow:
+    0 32px 80px rgba(0,0,0,0.7),
+    0 0 0 1px rgba(197,165,94,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+.portrait {
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(15%) contrast(1.05);
+  transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+
+.portraitFrame:hover .portrait {
+  transform: scale(1.03);
+}
+
+/* ── Gold corner accents ── */
+.corner {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cornerTL {
+  top: -1px; left: -1px;
+  border-top: 2px solid var(--lux-gold, #C5A55E);
+  border-left: 2px solid var(--lux-gold, #C5A55E);
+}
+
+.cornerBR {
+  bottom: -1px; right: -1px;
+  border-bottom: 2px solid var(--lux-gold, #C5A55E);
+  border-right: 2px solid var(--lux-gold, #C5A55E);
+}
+
+/* ── Floating credential card ── */
+.credCard {
+  position: absolute;
+  bottom: -20px;
+  right: -24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(10,10,14,0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197,165,94,0.35);
+  border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.55);
+  z-index: 10;
+  min-width: 220px;
+}
+
+.credIcon {
+  width: 28px;
+  height: 28px;
+  color: var(--lux-gold, #C5A55E);
+  flex-shrink: 0;
+}
+
+.credTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.credSub {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.45);
+  margin: 2px 0 0;
+  letter-spacing: 0.04em;
+}
+
+/* ── Bio column ── */
+.bioCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  color: var(--lux-gold, #C5A55E);
+  text-transform: uppercase;
+}
+
+.heading {
+  font-size: clamp(20px, 3.5vw, 40px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.goldName {
+  background: linear-gradient(135deg, #C5A55E 0%, #E8D49A 50%, #C5A55E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Pull quote ── */
+.quote {
+  border-left: 3px solid var(--lux-gold, #C5A55E);
+  padding: 18px 24px;
+  margin: 0;
+  background: rgba(197,165,94,0.04);
+  border-radius: 0 6px 6px 0;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  font-style: italic;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.75;
+}
+
+/* ── Bio text ── */
+.bio {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ── Credentials list ── */
+.credList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.credItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.credCheck {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(197,165,94,0.12);
+  border: 1px solid rgba(197,165,94,0.3);
+  color: var(--lux-gold, #C5A55E);
+  flex-shrink: 0;
+}
+
+.credCheck svg {
+  width: 10px;
+  height: 10px;
+}
+
+/* ── Signature ── */
+.signature {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.sigLine {
+  width: 140px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--lux-gold, #C5A55E), transparent);
+  opacity: 0.6;
+}
+
+.sigName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.sigRole {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin: 2px 0 0;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 340px 1fr;
+    gap: 48px;
+  }
+  .section {
+    padding: 80px 0;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0;
+  }
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 0 20px;
+  }
+  .portraitFrame {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .credCard {
+    right: 0;
+    bottom: -16px;
+    min-width: unset;
+  }
+  .bioCol {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 359px) {
+  .credCard {
+    position: static;
+    margin-top: 16px;
+  }
+}

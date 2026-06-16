@@ -5,11 +5,11 @@ import styles from './page.module.css';
 const requestsData = {
   'london-family-office': {
     countryCode: 'GB',
-    region: 'GB',
-    type: 'Multi-Generational Family Office',
-    title: 'Multigenerational Family Office (UK)',
-    seeking: 'Prime Commercial Real Estate & Luxury Hospitality',
-    capitalRange: '£80M – £220M',
+    region: 'UK',
+    type: 'Institutional Investor',
+    title: 'London Investor Group',
+    seeking: 'Commercial Real Estate',
+    capitalRange: '£120M+',
     markets: 'UK, Germany, France',
     horizon: '3 – 7 Years',
     description:
@@ -24,11 +24,11 @@ const requestsData = {
   },
   'dubai-sovereign-allocator': {
     countryCode: 'AE',
-    region: 'AE',
-    type: 'Sovereign Capital Allocator',
-    title: 'Sovereign Capital Allocator (UAE)',
-    seeking: 'Luxury Hotel Acquisitions & Mixed-Use Developments',
-    capitalRange: '$150M – $500M',
+    region: 'UAE',
+    type: 'Family Office',
+    title: 'Dubai Family Office',
+    seeking: 'Luxury Hotels & Resorts',
+    capitalRange: '$250M+',
     markets: 'GCC, Europe, Asia-Pacific',
     horizon: '10 – 20 Years',
     description:
@@ -44,10 +44,10 @@ const requestsData = {
   'singapore-venture-capital': {
     countryCode: 'SG',
     region: 'SG',
-    type: 'Venture & Growth Capital',
-    title: 'Venture & Growth Capital (SG)',
-    seeking: 'Technology, AI & High-Growth Enterprises',
-    capitalRange: '$20M – $80M',
+    type: 'Capital Partner',
+    title: 'Singapore Capital Partners',
+    seeking: 'AI & Technology Companies',
+    capitalRange: '$75M+',
     markets: 'Singapore, Japan, South Korea',
     horizon: '5 – 8 Years',
     description:
@@ -63,10 +63,10 @@ const requestsData = {
   'zurich-institutional-fund': {
     countryCode: 'CH',
     region: 'CH',
-    type: 'Institutional Investment Fund',
-    title: 'Institutional Investment Fund (CH)',
-    seeking: 'Infrastructure, Renewables & Core Real Assets',
-    capitalRange: '€100M – €350M',
+    type: 'Institutional Fund',
+    title: 'Zurich Institutional Fund',
+    seeking: 'Infrastructure, Renewables & Core Assets',
+    capitalRange: '€150M+',
     markets: 'DACH Region, Benelux',
     horizon: '10 – 25 Years',
     description:
@@ -82,10 +82,10 @@ const requestsData = {
   'new-york-private-equity': {
     countryCode: 'US',
     region: 'US',
-    type: 'Private Equity & Buyout Capital',
-    title: 'Private Equity & Buyout Capital (US)',
-    seeking: 'Healthcare, Industrials & Business Services',
-    capitalRange: '$100M – $400M',
+    type: 'Private Equity',
+    title: 'New York Buyout Group',
+    seeking: 'Healthcare & Defensively Positioned Assets',
+    capitalRange: '$300M+',
     markets: 'USA, Canada, United Kingdom',
     horizon: '4 – 8 Years',
     description:
@@ -100,11 +100,11 @@ const requestsData = {
   },
   'abu-dhabi-capital-group': {
     countryCode: 'AE',
-    region: 'AE',
-    type: 'Institutional Capital Allocator',
-    title: 'Institutional Capital Allocator (UAE)',
-    seeking: 'Trophy Assets & Luxury Mixed-Use Developments',
-    capitalRange: '$200M – $1B+',
+    region: 'UAE',
+    type: 'Sovereign Allocator',
+    title: 'Abu Dhabi Capital Group',
+    seeking: 'Trophy Assets & Master-Planned Developments',
+    capitalRange: '$500M+',
     markets: 'Global — GCC, Europe, Asia',
     horizon: '10 – 20 Years',
     description:

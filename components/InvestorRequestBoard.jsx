@@ -7,64 +7,64 @@ import styles from './InvestorRequestBoard.module.css';
 
 const requests = [
   {
-    id: 'london-family-office',
-    countryCode: 'GB',
-    region: 'GB',
-    designation: 'Multigenerational Family Office (UK)',
-    type: 'Multi-Generational Family Office',
-    focus: 'Prime Commercial Real Estate & Luxury Hospitality',
-    capital: '£80M – £220M',
-    markets: 'UK, Germany, France',
-  },
-  {
     id: 'dubai-sovereign-allocator',
     countryCode: 'AE',
-    region: 'AE',
-    designation: 'Sovereign Capital Allocator (UAE)',
-    type: 'Sovereign Capital Allocator',
-    focus: 'Luxury Hotel Acquisitions & Mixed-Use Developments',
-    capital: '$150M – $500M',
+    region: 'UAE',
+    designation: 'Dubai Family Office',
+    type: 'Family Office',
+    focus: 'Luxury Hotels & Resorts',
+    capital: '$250M+',
     markets: 'GCC, Europe, Asia-Pacific',
+  },
+  {
+    id: 'london-family-office',
+    countryCode: 'GB',
+    region: 'UK',
+    designation: 'London Investor Group',
+    type: 'Institutional Investor',
+    focus: 'Commercial Real Estate',
+    capital: '£120M+',
+    markets: 'UK, Germany, France',
   },
   {
     id: 'singapore-venture-capital',
     countryCode: 'SG',
     region: 'SG',
-    designation: 'Venture & Growth Capital (SG)',
-    type: 'Venture & Growth Capital',
-    focus: 'Technology, AI & High-Growth Enterprises',
-    capital: '$20M – $80M',
+    designation: 'Singapore Capital Partners',
+    type: 'Capital Partner',
+    focus: 'AI & Technology Companies',
+    capital: '$75M+',
     markets: 'Singapore, Japan, South Korea',
   },
   {
     id: 'zurich-institutional-fund',
     countryCode: 'CH',
     region: 'CH',
-    designation: 'Institutional Investment Fund (CH)',
-    type: 'Institutional Investment Fund',
-    focus: 'Infrastructure, Renewables & Core Real Assets',
-    capital: '€100M – €350M',
+    designation: 'Zurich Institutional Fund',
+    type: 'Institutional Fund',
+    focus: 'Infrastructure, Renewables & Core Assets',
+    capital: '€150M+',
     markets: 'DACH Region, Benelux',
   },
   {
     id: 'new-york-private-equity',
     countryCode: 'US',
     region: 'US',
-    designation: 'Private Equity & Buyout Capital (US)',
-    type: 'Private Equity & Buyout Capital',
-    focus: 'Healthcare, Industrials & Business Services',
-    capital: '$100M – $400M',
+    designation: 'New York Buyout Group',
+    type: 'Private Equity',
+    focus: 'Healthcare & Defensively Positioned Assets',
+    capital: '$300M+',
     markets: 'USA, Canada, United Kingdom',
   },
   {
     id: 'abu-dhabi-capital-group',
     countryCode: 'AE',
-    region: 'AE',
-    designation: 'Institutional Capital Allocator (UAE)',
-    type: 'Institutional Capital Allocator',
-    focus: 'Trophy Assets & Luxury Mixed-Use Developments',
-    capital: '$200M – $1B+',
-    markets: 'Global — GCC, Europe, Asia',
+    region: 'UAE',
+    designation: 'Abu Dhabi Capital Group',
+    type: 'Sovereign Allocator',
+    focus: 'Trophy Assets & Master-Planned Developments',
+    capital: '$500M+',
+    markets: 'Global Markets',
   },
 ];
 
@@ -76,20 +76,20 @@ export default function InvestorRequestBoard() {
         {/* ── Header ── */}
         <div className={styles.header}>
           <p className={styles.label}>ACTIVE INVESTOR DEMAND</p>
-          <h2 className={styles.heading}>Verified Capital Seeking Opportunities</h2>
-          <p className={styles.subtitle}>
-            A regional overview of verified institutional and private capital actively allocating
-            across global markets within the Lux Estate Network ecosystem.
+          <h2 className={styles.heading} id="requests-title">ACTIVE INVESTOR REQUESTS</h2>
+          <p className={styles.subtitle} id="requests-subtitle">
+            Showcasing verified capital allocators and real-time private equity interest 
+            actively seeking qualified opportunities globally.
           </p>
           <div className={styles.divider} />
         </div>
 
-        {/* ── Grid ── */}
+        {/* ── Grid / Swipeable Carousel ── */}
         <div className={styles.grid}>
           {requests.map((req) => (
             <div key={req.id} className={styles.card}>
 
-              {/* Top row: flag icon + region code + type tag */}
+              {/* Top row: Flag + Region + Type Tag */}
               <div className={styles.cardTop}>
                 <div className={styles.flagRegion}>
                   <img
@@ -102,13 +102,13 @@ export default function InvestorRequestBoard() {
                 <span className={styles.typeTag}>{req.type}</span>
               </div>
 
-              {/* Designation */}
+              {/* Designation Title */}
               <h3 className={styles.designation}>{req.designation}</h3>
 
-              {/* Data rows */}
+              {/* Data Block */}
               <div className={styles.dataBlock}>
                 <div className={styles.dataRow}>
-                  <span className={styles.dataLabel}>Investment Focus</span>
+                  <span className={styles.dataLabel}>Seeking</span>
                   <span className={styles.dataValue}>{req.focus}</span>
                 </div>
                 <div className={styles.dataRow}>
@@ -121,11 +121,13 @@ export default function InvestorRequestBoard() {
                 </div>
               </div>
 
-              {/* Footer: badge + CTA */}
+              {/* Card Footer: Verified Badge + Action Link */}
               <div className={styles.cardFooter}>
-                <VerificationBadge />
+                <div className={styles.badgeWrapper}>
+                  <VerificationBadge />
+                </div>
                 <Link href={`/investor-requests/${req.id}`} className={styles.btn}>
-                  View Profile
+                  VIEW PROFILE
                 </Link>
               </div>
             </div>

@@ -2,8 +2,9 @@ import React from 'react';
 import styles from './Legal.module.css';
 
 export const metadata = {
-  title: 'Privacy Policy | Lux Estate Network',
-  description: 'Understand how we protect and manage your investment data and private credentials.',
+  title: 'Privacy Policy',
+  description: 'Understand how Lux Estate Network protects and manages your investment data, private credentials, and personal information in compliance with GDPR and global regulations.',
+  alternates: { canonical: 'https://luxestatenetwork.com/privacy' },
 };
 
 export default function PrivacyPage() {

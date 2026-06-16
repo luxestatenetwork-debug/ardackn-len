@@ -9,7 +9,7 @@
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 24px 64px 24px;
+  padding: 0 40px 64px 40px;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 64px;
@@ -24,7 +24,6 @@
 .logoContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 72px;
   width: 72px;
   transition: var(--transition-smooth);
@@ -45,6 +44,7 @@
   color: var(--text-secondary);
   font-size: 0.9rem;
   max-width: 400px;
+  line-height: 1.6;
 }
 
 .addressSection {
@@ -73,6 +73,8 @@
   font-size: 0.85rem;
   font-weight: 600;
   transition: var(--transition-smooth);
+  display: inline-block;
+  margin-top: 4px;
 }
 
 .mapLink:hover {
@@ -96,6 +98,8 @@
   color: var(--text-secondary);
   font-size: 0.9rem;
   transition: var(--transition-smooth);
+  display: inline-block;
+  padding: 2px 0;
 }
 
 .list a:hover {
@@ -105,7 +109,7 @@
 
 .bottomBar {
   background-color: #08080a;
-  padding: 24px;
+  padding: 24px 20px;
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.02);
 }
@@ -113,11 +117,88 @@
 .copyright {
   font-size: 0.8rem;
   color: var(--text-muted);
+  line-height: 1.5;
 }
 
+/* ─── Responsive ─── */
+
+/* Tablet landscape */
+@media (max-width: 1024px) {
+  .container {
+    gap: 40px;
+    padding: 0 28px 48px;
+  }
+}
+
+/* Tablet portrait — collapse to 2-col */
 @media (max-width: 768px) {
   .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding: 0 24px 40px;
+  }
+
+  /* Brand col spans full width on top */
+  .brandCol {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile — single column */
+@media (max-width: 600px) {
+  .footer {
+    padding: 48px 0 0;
+  }
+
+  .container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
+    padding: 0 20px 40px;
+  }
+
+  .brandCol {
+    grid-column: auto;
+    text-align: center;
+    align-items: center;
+  }
+
+  .logoContainer {
+    margin: 0 auto;
+  }
+
+  .tagline {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .addressSection {
+    text-align: left;
+    width: 100%;
+  }
+
+  .colTitle {
+    font-size: 0.9rem;
+  }
+
+  .list a {
+    font-size: 0.88rem;
+  }
+
+  /* Expand links into a 2-col list on mobile for density */
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 359px) {
+  .container {
+    padding: 0 16px 32px;
+  }
+
+  .list {
+    grid-template-columns: 1fr;
   }
 }

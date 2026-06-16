@@ -13,6 +13,7 @@
   display: flex;
   align-items: stretch;
   gap: 32px;
+  overflow: hidden;
 }
 
 .titleCol {
@@ -46,40 +47,7 @@
   flex-grow: 1;
 }
 
-@media (max-width: 1280px) {
-  .container {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 24px;
-  }
-  
-  .titleCol {
-    width: 100%;
-    align-items: flex-start;
-  }
-  
-  .divider {
-    width: 100%;
-    height: 1px;
-  }
-
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 500px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* ─── Card ─── */
 .card {
   display: flex;
   flex-direction: column;
@@ -119,4 +87,82 @@
   color: var(--text-secondary);
   line-height: 1.5;
   margin: 0;
+}
+
+/* ─── Responsive ─── */
+
+/* Tablet landscape */
+@media (max-width: 1280px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .titleCol {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Large phones */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .container {
+    padding: 24px 20px;
+  }
+}
+
+/* Small phones: iPhone SE, 320–374px */
+@media (max-width: 479px) {
+  .section {
+    padding: 32px 12px;
+  }
+
+  .container {
+    padding: 20px 16px;
+    border-radius: 10px;
+    gap: 18px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .cardTitle {
+    font-size: 0.68rem;
+  }
+
+  .cardDesc {
+    font-size: 0.68rem;
+  }
+}
+
+/* Ultra small */
+@media (max-width: 359px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }

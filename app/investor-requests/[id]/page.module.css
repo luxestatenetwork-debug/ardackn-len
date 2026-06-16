@@ -262,3 +262,56 @@
     padding: 60px 0 80px;
   }
 }
+
+/* Mobile — 480px */
+@media (max-width: 480px) {
+  .page {
+    padding: 48px 0 60px;
+  }
+
+  .inner {
+    padding: 0 16px;
+  }
+
+  .heroTop {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .typeTag {
+    width: 100%;
+    text-align: center;
+  }
+
+  .card {
+    padding: 24px 18px;
+  }
+
+  .metaCard {
+    padding: 24px 18px;
+  }
+
+  .contactBtn {
+    font-size: 0.7rem;
+    padding: 13px 16px;
+  }
+}
+
+/* Ultra small — 360px */
+@media (max-width: 359px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .backLink {
+    margin-bottom: 32px;
+  }
+
+  .card {
+    padding: 20px 14px;
+  }
+
+  .metaCard {
+    padding: 20px 14px;
+  }
+}

@@ -1,0 +1,511 @@
+/* ═══════════════════════════════════════════════════════
+   GLOBAL CAPITAL NETWORK — CSS Module Styles
+   ═══════════════════════════════════════════════════════ */
+
+.section {
+  position: relative;
+  background-color: #060608;
+  padding: 120px 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(197, 165, 94, 0.1);
+  border-bottom: 1px solid rgba(197, 165, 94, 0.1);
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 6%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Header ─── */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.tag {
+  color: var(--gold-primary, #C5A55E);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ─── Map Grid Layout ─── */
+.mapWrapper {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 32px;
+  align-items: start;
+}
+
+.mapArea {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  background-color: #0c0c0f;
+  border: 1px solid rgba(197, 165, 94, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* World map texture background */
+.mapBg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/dark_world_map.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.svgOverlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ─── Dashboard Legend ─── */
+.mapLegend {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(10, 10, 12, 0.85);
+  border: 1px solid rgba(197, 165, 94, 0.22);
+  border-radius: 4px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.58rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.legendActiveFlow {
+  width: 18px;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, var(--gold-primary, #C5A55E) 0, var(--gold-primary, #C5A55E) 4px, transparent 4px, transparent 8px);
+}
+
+.legendVerifiedNode {
+  width: 7px;
+  height: 7px;
+  background: var(--gold-primary, #C5A55E);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--gold-primary, #C5A55E);
+}
+
+/* ─── SVG Connection Paths & Keyframe Flows ─── */
+.connectionLine {
+  stroke: rgba(197, 165, 94, 0.16);
+  stroke-width: 1.25;
+  fill: none;
+  stroke-dasharray: 6 5;
+  animation: flow 3s linear infinite;
+  transition: stroke 0.4s ease, stroke-width 0.4s ease, opacity 0.4s ease;
+}
+
+.connectionLineActive {
+  stroke: var(--gold-primary, #C5A55E);
+  stroke-width: 2.25;
+  opacity: 0.9;
+  stroke-dasharray: 8 4;
+  animation: flowActive 1.8s linear infinite;
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -22;
+  }
+}
+
+@keyframes flowActive {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+/* ─── SVG Hub Nodes ─── */
+.hubNode {
+  outline: none;
+}
+
+.hubNode:hover .nodeCore {
+  fill: var(--gold-primary, #C5A55E);
+  r: 6px;
+}
+
+.hubNode:hover .cityLabel {
+  fill: #ffffff;
+  opacity: 1;
+}
+
+/* Core solid dot */
+.nodeCore {
+  fill: rgba(255, 255, 255, 0.45);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nodeCoreActive {
+  fill: var(--gold-primary, #C5A55E);
+  filter: drop-shadow(0 0 4px var(--gold-primary));
+}
+
+/* Outer pulsing glow */
+.nodePulse {
+  fill: none;
+  stroke: rgba(197, 165, 94, 0.35);
+  stroke-width: 1;
+  opacity: 0;
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+
+.nodePulseActive {
+  opacity: 1;
+  animation: nodeGlow 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes nodeGlow {
+  0% {
+    r: 6px;
+    opacity: 0.8;
+    stroke-width: 1px;
+  }
+  50% {
+    opacity: 0.4;
+    stroke-width: 1.5px;
+  }
+  100% {
+    r: 22px;
+    opacity: 0;
+    stroke-width: 0.5px;
+  }
+}
+
+/* City Text Labels */
+.cityLabel {
+  fill: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  user-select: none;
+  transition: fill 0.3s ease, opacity 0.3s ease, font-size 0.3s ease;
+}
+
+.cityLabelActive {
+  fill: #ffffff;
+  font-weight: 700;
+  font-size: 11px;
+  opacity: 1;
+}
+
+/* ─── Detail Panel (Glassmorphic Card) ─── */
+.detailCard {
+  background: rgba(12, 12, 16, 0.72);
+  border: 1px solid rgba(197, 165, 94, 0.22);
+  border-radius: 8px;
+  padding: 32px 28px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: slideInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.hubName {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: 1.52rem;
+  color: #ffffff;
+  margin-bottom: 4px;
+  letter-spacing: 0.01em;
+}
+
+.hubType {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-primary, #C5A55E);
+}
+
+.timeBadge {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.timeLabel {
+  display: block;
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.08em;
+}
+
+.timeValue {
+  font-family: var(--font-sans, system-ui, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.cardDivider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(197, 165, 94, 0.22) 0%, rgba(197, 165, 94, 0.02) 100%);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.metaRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metaLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.05em;
+}
+
+.metaValue {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+}
+
+.metaValueHighlight {
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.metaValueGold {
+  font-size: 0.82rem;
+  color: var(--gold-primary, #C5A55E);
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.connectBtn {
+  width: 100%;
+  height: 48px;
+  background: linear-gradient(135deg, #FFE135 0%, var(--gold-primary, #C5A55E) 100%);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(197, 165, 94, 0.15);
+}
+
+.connectBtn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(197, 165, 94, 0.3);
+}
+
+/* ─── Mobile Selection Elements ─── */
+.mobileSelector {
+  display: none;
+  margin-top: 24px;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.selectorHint {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.mobileChips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 12px 12px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mobileChips::-webkit-scrollbar {
+  display: none;
+}
+
+.mobileChip {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  scroll-snap-align: start;
+}
+
+.mobileChipActive {
+  background: rgba(197, 165, 94, 0.12);
+  border-color: var(--gold-primary, #C5A55E);
+  color: var(--gold-primary, #C5A55E);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE LAYOUTS
+   ═══════════════════════════════════════════════════════ */
+
+@media (max-width: 1200px) {
+  .mapWrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .detailCard {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .mobileSelector {
+    display: flex;
+  }
+
+  .mapLegend {
+    display: none; /* Hide legend on mobile map to save space */
+  }
+
+  /* Hide labels on mobile to avoid layout overlap */
+  .cityLabel {
+    display: none;
+  }
+
+  /* Show ONLY active city label on mobile map */
+  .cityLabelActive {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    fill: #ffffff;
+  }
+
+  .mapArea {
+    aspect-ratio: 16 / 9; /* Slightly taller on mobile */
+  }
+
+  .detailCard {
+    padding: 24px 20px;
+  }
+
+  .hubName {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .mapArea {
+    aspect-ratio: 4 / 3; /* More vertical real estate on small screens */
+  }
+
+  .detailCard {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 359px) {
+  .mapArea {
+    aspect-ratio: 1 / 1; /* Square box on ultra small phones */
+  }
+}

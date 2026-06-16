@@ -1,7 +1,23 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/admin/page": "app/admin/page.js",
+  "/api/ai/route": "app/api/ai/route.js",
+  "/api/webhooks/gumroad/route": "app/api/webhooks/gumroad/route.js",
+  "/dashboard/my-listings/page": "app/dashboard/my-listings/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/dashboard/settings/page": "app/dashboard/settings/page.js",
+  "/listings/[id]/page": "app/listings/[id]/page.js",
+  "/listings/create/page": "app/listings/create/page.js",
+  "/listings/page": "app/listings/page.js",
   "/page": "app/page.js",
+  "/payment-success/page": "app/payment-success/page.js",
+  "/settings/page": "app/settings/page.js",
+  "/about/page": "app/about/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/capital-demand/[id]/page": "app/capital-demand/[id]/page.js",
+  "/investor-requests/[id]/page": "app/investor-requests/[id]/page.js",
   "/privacy/page": "app/privacy/page.js",
+  "/terms/page": "app/terms/page.js",
   "/(auth)/login/page": "app/(auth)/login/page.js",
   "/(auth)/register/page": "app/(auth)/register/page.js"
 }

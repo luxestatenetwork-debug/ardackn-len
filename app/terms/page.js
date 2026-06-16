@@ -2,8 +2,9 @@ import React from 'react';
 import styles from './Legal.module.css';
 
 export const metadata = {
-  title: 'Terms of Service | Lux Estate Network',
-  description: 'Review the compliance terms, membership responsibilities, and legal disclaimers of our investment network.',
+  title: 'Terms of Service',
+  description: 'Review the compliance terms, membership responsibilities, and legal disclaimers of the Lux Estate Network private investment platform.',
+  alternates: { canonical: 'https://luxestatenetwork.com/terms' },
 };
 
 export default function TermsPage() {
@@ -23,7 +24,7 @@ export default function TermsPage() {
         <section className={styles.section}>
           <h2>2. Membership and Slots</h2>
           <p>
-            Listing memberships are purchased on an annual subscription basis ($99/year for 3 slots). Users are responsible for managing their slots and maintaining active status limits.
+            Platinum Listing Memberships are purchased on an annual subscription basis ($499/year for 5 active listing slots). Users are responsible for managing their slots and maintaining active status limits.
           </p>
         </section>
 
