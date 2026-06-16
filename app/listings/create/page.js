@@ -56,11 +56,6 @@ export default function CreateListingPage() {
       return;
     }
 
-    if (imageFiles.length === 0) {
-      addToast('Please upload at least one image.', 'error');
-      return;
-    }
-    
     if (!coverImageFile) {
       addToast('Please upload a cover image.', 'error');
       return;
@@ -379,7 +374,7 @@ export default function CreateListingPage() {
             </div>
 
             <div className={styles.field}>
-              <label className={styles.label}>Listing Gallery Images (Max 30) *</label>
+              <label className={styles.label}>Listing Gallery Images (Max 30) (Optional)</label>
               <input
                 type="file"
                 multiple
