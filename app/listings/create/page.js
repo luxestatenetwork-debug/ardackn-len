@@ -22,7 +22,6 @@ export default function CreateListingPage() {
   const [subCategory, setSubCategory] = useState('');
   const [price, setPrice] = useState('');
   const [currency, setCurrency] = useState('USD');
-  const [location, setLocation] = useState('');
   const [city, setCity] = useState('');
   const [country, setCountry] = useState('');
   const [listingType, setListingType] = useState('sale');
@@ -73,7 +72,6 @@ export default function CreateListingPage() {
         subCategory,
         price: parseFloat(price) || 0,
         currency,
-        location,
         city,
         country,
         listingType,
@@ -321,8 +319,6 @@ export default function CreateListingPage() {
               <label className={styles.label}>Country *</label>
               <input type="text" required value={country} onChange={(e) => setCountry(e.target.value)} className={styles.input} />
             </div>
-
-
 
             <div className={styles.field}>
               <label className={styles.label}>Video URL (Youtube/Vimeo)</label>
