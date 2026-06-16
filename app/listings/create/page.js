@@ -24,6 +24,8 @@ export default function CreateListingPage() {
   const [currency, setCurrency] = useState('USD');
   const [city, setCity] = useState('');
   const [country, setCountry] = useState('');
+  const [region, setRegion] = useState('');
+  const [address, setAddress] = useState('');
   const [listingType, setListingType] = useState('sale');
   const [targetInvestment, setTargetInvestment] = useState('');
   const [videoUrl, setVideoUrl] = useState('');
@@ -74,6 +76,9 @@ export default function CreateListingPage() {
         currency,
         city,
         country,
+        region,
+        address,
+        location: [city, region, country].filter(Boolean).join(', '),
         listingType,
         targetInvestment,
         videoUrl,
@@ -318,6 +323,16 @@ export default function CreateListingPage() {
             <div className={styles.field}>
               <label className={styles.label}>Country *</label>
               <input type="text" required value={country} onChange={(e) => setCountry(e.target.value)} className={styles.input} />
+            </div>
+
+            <div className={styles.field}>
+              <label className={styles.label}>Region / State (Optional)</label>
+              <input type="text" value={region} onChange={(e) => setRegion(e.target.value)} className={styles.input} placeholder="e.g. California, Andalusia" />
+            </div>
+
+            <div className={styles.field}>
+              <label className={styles.label}>Address (Optional)</label>
+              <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} className={styles.input} placeholder="e.g. 123 Luxury Way" />
             </div>
 
             <div className={styles.field}>

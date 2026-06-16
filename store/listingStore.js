@@ -8,6 +8,7 @@ import {
   getDocs, 
   doc, 
   getDoc,
+  setDoc,
   addDoc, 
   updateDoc, 
   deleteDoc,
@@ -125,6 +126,8 @@ export const useListingStore = create((set, get) => ({
         price: listing.price || 0,
         currency: listing.currency || 'USD',
         location: listing.location || '',
+        city: listing.city || '',
+        country: listing.country || '',
         coverImage: listing.coverImage || '',
         createdAt: new Date().toISOString()
       });

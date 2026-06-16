@@ -626,7 +626,7 @@ export default function AdminPage() {
                             </span>
                           </td>
                           <td style={{color:'var(--gold-secondary)',fontWeight:700}}>{formatCurrency(l.price)}</td>
-                          <td>{l.location || '—'}</td>
+                          <td>{l.city && l.country ? `${l.city}, ${l.country}` : (l.location || '—')}</td>
                           <td>
                             <span className={`${styles.badge} ${l.status === 'active' ? styles.badgeActive : styles.badgePaused}`}>
                               {l.status === 'active' ? 'Aktif' : 'Durdurulmuş'}
